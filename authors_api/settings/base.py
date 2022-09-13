@@ -7,7 +7,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
 APPS_DIR = ROOT_DIR / "core_apps"
 
-DEBUG = env.bool("DJANGO_DEBUG", False)
+DEBUG = env.bool("DJANGO_DEBUG", True)
 
 
 # Application definition
