@@ -13,3 +13,8 @@ phonenumbers==8.12.55
 Pillow==9.2.0
 
 pytz==2022.2.1
+
+redis==4.1.0
+celery==5.2.3
+flower==1.0.0
+django-celery-email==3.0.0
