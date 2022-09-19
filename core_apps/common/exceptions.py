@@ -1,8 +1,8 @@
-from urllib import response
 from rest_framework.views import exception_handler
 
 
 def common_exception_handler(exc, context):
+
     response = exception_handler(exc, context)
 
     handlers = {
@@ -32,10 +32,9 @@ def _handle_not_found_error(exc, context, response):
         error_key = view.queryset.model._meta.verbose_name
         response.data = {
             "status_code": status_code,
-            "errors": {
-                error_key: response.data["detail"],
-            },
+            "errors": {error_key: response.data["detail"]},
         }
+
     else:
         response = _handle_generic_error(exc, context, response)
-        return response
+    return response
