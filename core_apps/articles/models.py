@@ -1,5 +1,6 @@
 from operator import imod
 from pydoc import describe
+
 from autoslug import AutoSlugField
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -7,7 +8,6 @@ from django.db.models import Avg
 from django.utils.translation import gettext_lazy as _
 
 from core_apps.common.models import TimeStampedUUIDModel
-
 from core_apps.ratings.models import Rating
 
 from .read_time_engine import ArticleReadTimeEngine

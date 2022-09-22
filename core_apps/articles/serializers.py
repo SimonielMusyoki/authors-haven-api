@@ -1,10 +1,11 @@
-from typing_extensions import Required
 from rest_framework import serializers
+from typing_extensions import Required
 
 from core_apps.articles.custom_tag_field import TagRelatedField
-from .models import Article, ArticleViews
 from core_apps.comments.serializers import CommentListSerializer
 from core_apps.ratings.serializers import RatingSerializer
+
+from .models import Article, ArticleViews
 
 
 class ArticleViewsSerializer(serializers.ModelSerializer):

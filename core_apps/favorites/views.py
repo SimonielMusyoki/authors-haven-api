@@ -1,8 +1,7 @@
-from email import generator
 from rest_framework import generics, permissions, status
+from rest_framework.exceptions import NotFound
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.exceptions import NotFound
 
 from core_apps.articles.models import Article
 from core_apps.articles.serializers import ArticleCreateSerializer
@@ -20,7 +19,7 @@ class FavouriteAPIView(generics.CreateAPIView):
         data = request.data
         try:
             article = Article.objects.get(slug=slug)
-        except:
+        except Article.DoesNotExist:
             raise NotFound("Article with that slug does not exist in our catalog")
         user = request.user
 

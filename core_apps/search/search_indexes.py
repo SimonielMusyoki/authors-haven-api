@@ -1,4 +1,3 @@
-from operator import index
 from django.utils import timezone
 from haystack import indexes
 
